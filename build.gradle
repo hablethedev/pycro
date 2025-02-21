@@ -38,14 +38,18 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+
 }
 
 processResources {
 	inputs.property "version", project.version
+	inputs.property "loader_version", project.loader_version
+	inputs.property "minecraft_version", project.minecraft_version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": inputs.properties.version
+		expand "version": inputs.properties.version,
+				"loader_version": inputs.properties.loader_version,
+				"minecraft_version": inputs.properties.minecraft_version
 	}
 }
 

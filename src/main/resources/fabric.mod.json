@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "pycro",
 	"version": "${version}",
-	"name": "Example mod",
+	"name": "Pycro",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
@@ -12,7 +12,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"icon": "assets/pycro/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -23,19 +23,16 @@
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"pycro.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "pycro.client.mixins.json",
 			"environment": "client"
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21.4",
+		"fabricloader": ">=${loader_version}",
+		"minecraft": "${minecraft_version}",
 		"java": ">=21",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }
