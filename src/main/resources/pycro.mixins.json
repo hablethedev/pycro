@@ -1,9 +1,9 @@
 {
 	"required": true,
-	"package": "com.example.mixin",
+	"package": "hazel.pycro.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-      "hazel.pycro.mixin.ExampleMixin"
+      "ExampleMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
