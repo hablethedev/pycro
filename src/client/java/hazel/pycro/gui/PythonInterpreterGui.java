@@ -1,16 +1,14 @@
 package hazel.pycro.gui;
 
 import hazel.pycro.PythonInterpreter;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.client.gui.widget.TextFieldWidget;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 
 // TODO: save this, make it appear on first run, and make it actually do something
 
 public class PythonInterpreterGui extends Screen {
-    private TextFieldWidget customPathField;
     private PythonInterpreter selectedInterpreter = PythonInterpreter.PYPY; // todo: actually make this do stuff
 
     public PythonInterpreterGui() {
@@ -25,31 +23,10 @@ public class PythonInterpreterGui extends Screen {
         ButtonWidget pypyButton = ButtonWidget.builder(Text.of("PyPy (recommended)"), button -> selectedInterpreter = PythonInterpreter.PYPY).dimensions(x, y, 200, 20).build();
         addDrawableChild(pypyButton);
 
-        ButtonWidget pathButton = ButtonWidget.builder(Text.of("PATH Python"), button -> selectedInterpreter = PythonInterpreter.PATH).dimensions(x, y + 30, 200, 20).build();
+        ButtonWidget pathButton = ButtonWidget.builder(Text.of("CPython (python.org)"), button -> selectedInterpreter = PythonInterpreter.CPYTHON).dimensions(x, y + 30, 200, 20).build();
         addDrawableChild(pathButton);
 
-        ButtonWidget customButton = ButtonWidget.builder(Text.of("Custom"), button -> selectedInterpreter = PythonInterpreter.CUSTOM).dimensions(x, y + 60, 200, 20).build();
-        addDrawableChild(customButton);
-
-        customPathField = new TextFieldWidget(textRenderer, x, y + 90, 200, 20, Text.of("Enter path")); //idk why
-        customPathField.setVisible(false);
-        addDrawableChild(customPathField);
-
-        ButtonWidget doneButton = ButtonWidget.builder(Text.of("Done"), button -> MinecraftClient.getInstance().setScreen(null)).dimensions(x, y + 120, 200, 20).build();
+        ButtonWidget doneButton = ButtonWidget.builder(Text.of("Done"), button -> MinecraftClient.getInstance().setScreen(null)).dimensions(x, y + 80, 200, 20).build();
         addDrawableChild(doneButton);
-    }
-
-    @Override
-    public void render(net.minecraft.client.gui.DrawContext context, int mouseX, int mouseY, float delta) {
-        renderBackground(context, mouseX, mouseY, delta);
-
-        super.render(context, mouseX, mouseY, delta);
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-
-        customPathField.setVisible(selectedInterpreter == PythonInterpreter.CUSTOM);
     }
 }
