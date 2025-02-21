@@ -19,7 +19,7 @@
           "hazel.pycro.ExampleMod"
 		],
 		"client": [
-          "hazel.pycro.ExampleModClient"
+          "hazel.pycro.PycroInit"
 		]
 	},
 	"mixins": [

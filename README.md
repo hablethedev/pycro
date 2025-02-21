@@ -5,4 +5,5 @@ For setup instructions please see the [fabric documentation page](https://docs.f
 
 ## License
 
-Pycro is licensed under the AGPL-3.0 license.
+Pycro is licensed under the Apache 2.0 license. For more information, see the [LICENSE](LICENSE) file.
+```
