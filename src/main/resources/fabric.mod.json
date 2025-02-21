@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+          "hazel.pycro.ExampleMod"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+          "hazel.pycro.ExampleModClient"
 		]
 	},
 	"mixins": [

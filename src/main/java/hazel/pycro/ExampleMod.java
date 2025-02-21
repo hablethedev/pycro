@@ -1,4 +1,4 @@
-package com.example;
+package hazel.pycro;
 
 import net.fabricmc.api.ModInitializer;
 
