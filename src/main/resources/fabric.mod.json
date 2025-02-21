@@ -1,38 +1,38 @@
 {
-	"schemaVersion": 1,
-	"id": "pycro",
-	"version": "${version}",
-	"name": "Pycro",
-	"description": "Implement Macros in Minecraft with Python!",
-	"authors": [
-		"hablethedev"
-	],
-	"contact": {
-		"homepage": "https://github.com/hablethedev/pycro",
-		"sources": "https://github.com/hablethedev/pycro"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/pycro/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-          "hazel.pycro.ExampleMod"
-		],
-		"client": [
-          "hazel.pycro.PycroInit"
-		]
-	},
-	"mixins": [
-		"pycro.mixins.json",
-		{
-			"config": "pycro.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=${loader_version}",
-		"minecraft": "${minecraft_version}",
-		"java": ">=21",
-		"fabric-api": "*"
-	}
+  "schemaVersion": 1,
+  "id": "pycro",
+  "version": "${version}",
+  "name": "Pycro",
+  "description": "Implement Macros in Minecraft with Python!",
+  "authors": [
+    "hablethedev"
+  ],
+  "contact": {
+    "homepage": "https://github.com/hablethedev/pycro",
+    "sources": "https://github.com/hablethedev/pycro"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/pycro/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "hazel.pycro.Pycro"
+    ],
+    "client": [
+      "hazel.pycro.PycroClient"
+    ]
+  },
+  "mixins": [
+    "pycro.mixins.json",
+    {
+      "config": "pycro.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
 }
