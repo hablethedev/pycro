@@ -3,13 +3,13 @@
 	"id": "pycro",
 	"version": "${version}",
 	"name": "Pycro",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Implement Macros in Minecraft with Python!",
 	"authors": [
-		"Me!"
+		"hablethedev"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/hablethedev/pycro",
+		"sources": "https://github.com/hablethedev/pycro"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/pycro/icon.png",
@@ -34,5 +34,18 @@
 		"minecraft": "${minecraft_version}",
 		"java": ">=21",
 		"fabric-api": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/jEGF5fb"
+			},
+			"parent": {
+				"id": "pycro",
+				"name": "Pycro",
+				"description": "Modular example library"
+			},
+			"update_checker": true
+		}
 	}
 }
