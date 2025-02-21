@@ -22,7 +22,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"modid" {
+		"pycro" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
