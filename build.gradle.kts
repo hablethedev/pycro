@@ -10,6 +10,7 @@ base {
 }
 
 repositories {
+    maven("https://maven.wispforest.io/releases/")
 }
 
 loom {
@@ -32,6 +33,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
+    annotationProcessor(modImplementation("io.wispforest:owo-lib:${project.property("owo_version")}")!!)
 }
 
 tasks.processResources {
