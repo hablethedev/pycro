@@ -1,8 +1,6 @@
 {
-  "text.config.pycro.option.interpreter": "Python Interpreter",
   "text.config.pycro.title": "Pycro",
+  "text.config.pycro.option.interpreter": "Python Interpreter",
   "text.config.pycro.option.interpreter.value.pypy": "PyPy (recommended)",
-  "text.config.pycro.option.interpreter.value.cpython": "CPython (python.org)",
-  "category.pycro.controls": "Pycro",
-  "key.pycro.opengui": "Open Basic Config"
+  "text.config.pycro.option.interpreter.value.cpython": "CPython (python.org)"
 }

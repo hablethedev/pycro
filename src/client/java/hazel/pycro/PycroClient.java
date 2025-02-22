@@ -1,29 +1,32 @@
 package hazel.pycro;
 
-import hazel.pycro.gui.PythonInterpreterGui;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.util.InputUtil;
-import org.lwjgl.glfw.GLFW;
+import net.minecraft.text.Text;
+
+import java.io.File;
+import java.io.IOException;
 
 import static hazel.pycro.Pycro.LOGGER;
 
 public class PycroClient implements ClientModInitializer {
-    private static KeyBinding openGuiKey;
+    private final File firstRunFile = new File(FabricLoader.getInstance().getConfigDir().toAbsolutePath() + "/pycro_first_run");
 
     @Override
     public void onInitializeClient() {
-        openGuiKey = new KeyBinding("key.pycro.opengui", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_I, "category.pycro.controls");
-        KeyBindingHelper.registerKeyBinding(openGuiKey);
-
-        ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while (openGuiKey.wasPressed()) {
-                LOGGER.info("python picker open");
-
-                MinecraftClient.getInstance().setScreen(new PythonInterpreterGui());
+        ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
+            if (!firstRunFile.exists()) {
+                MinecraftClient.getInstance().player.sendMessage(Text.of("Hey, it looks like this is your first time running Pycro!\n" +
+                        "Please configure the Python interpreter to use in the config."
+                ));
+                try {
+                    firstRunFile.createNewFile();
+                } catch (IOException e) {
+                    LOGGER.error("Failed to create first run file");
+                    LOGGER.error(e.getMessage());
+                }
             }
         });
     }
