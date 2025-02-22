@@ -1,8 +1,9 @@
 {
   "required": true,
-  "package": "hazel.pycro.mixin.client",
+  "package": "hazel.pycro.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "MessageHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
