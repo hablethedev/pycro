@@ -11,7 +11,7 @@
     "homepage": "https://github.com/hablethedev/pycro",
     "sources": "https://github.com/hablethedev/pycro"
   },
-  "license": "CC0-1.0",
+  "license": "Apache-2.0",
   "icon": "assets/pycro/icon.png",
   "environment": "*",
   "entrypoints": {
