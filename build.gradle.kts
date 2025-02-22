@@ -58,9 +58,3 @@ java {
     // If you remove this line, sources will not be generated.
     withSourcesJar()
 }
-
-tasks.jar {
-    from("LICENSE") {
-        rename { "${it}_${project.base.archivesName}" }
-    }
-}
